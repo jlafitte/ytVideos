@@ -31,8 +31,6 @@ $.fn.ytVideos = function(settings) {
 		if (query.length > 0) ytFeed += '&q="' + query + '"';
 		if (settings.count > 0) ytFeed += "&max-results=" + settings.count;
 	
-		console.log(ytFeed);
-	
 		ytDone = false;
 		
 		$ytVideos.empty();
