@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>ytVidoes Examples</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
+		<script src="jquery.ytVideos.js"></script>
+		<style>						
+			.imageLightBox .close { 
+			    background-image:url(/images/close.png); 
+			    position:absolute; 
+			    right:-15px; 
+			    top:-15px; 
+			    cursor:pointer; 
+			    height:35px; 
+			    width:35px; 
+			}
+						
+			.imageLightBox {
+				width: 640px;
+				height: 480px;
+			    /* must be initially hidden */ 
+			    display:none;
+			    padding:12px;
+				
+			    /* place overlay on top of other elements */ 
+			    z-index:10000; 
+			     
+			    /* styling */ 
+			    background-color:#020506;
+			     
+			    /* CSS3 styling for latest browsers */ 
+			    -moz-box-shadow:0 0 30px 5px #000; 
+			    -webkit-box-shadow: 0 0 30px #000;     
+			} 
+
+		</style>
+	</head>
+	<body>
+		<div class="ytVideo">YouTube Playlist:B06448CACE445B5D</div>
+		<script>
+		    jQuery(function() {
+		        jQuery(".ytVideo").ytVideos({lightbox:true,olclass:"imageLightBox"});
+		    });
+		</script>
+	</body>
+</html>
