@@ -1,6 +1,7 @@
 (function($){
 $.fn.ytVideos = function(settings) {
 	return this.each(function(index) {	
+		var ytPlayer = ytPlayer;
 		var $ytVideos = $(this);
 		/*
 			valid settings are:
@@ -84,7 +85,7 @@ $.fn.ytVideos = function(settings) {
 						firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 						
 						onYouTubePlayerAPIReady = function(){							
-							player = new YT.Player("ytPlayerInternal", {
+							ytPlayer = new YT.Player("ytPlayerInternal", {
 								height:			'100%',
 								width:			'100%',
 								videoId: 		ytid,
@@ -151,11 +152,11 @@ $.fn.ytVideos = function(settings) {
 
 						$("#ytPlayerInternal").replaceWith('<div id="ytPlayerInternal" /></div>');
 						
-						delete player;
+						delete ytPlayer;
 
 						ytDone = false;
 
-						player = new YT.Player("ytPlayerInternal", {
+						ytPlayer = new YT.Player("ytPlayerInternal", {
 							height:			'100%',
 							width:			'100%',
 							videoId: 		ytid,
@@ -186,7 +187,7 @@ $.fn.ytVideos = function(settings) {
 									loadSpeed: 200,
 									opacity: 0.7,
 									onClose: function() {
-										player.destroy();
+										ytPlayer.destroy();
 									}
 								},load:true
 							}).load();
